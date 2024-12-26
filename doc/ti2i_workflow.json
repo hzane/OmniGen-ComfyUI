@@ -1,0 +1,206 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1021,
+        "1": 106
+      },
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 2,
+      "type": "PromptTextNode",
+      "pos": {
+        "0": 48,
+        "1": 88
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "TEXT",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptTextNode"
+      },
+      "widgets_values": [
+        "The woman in image_1 waves her hand happily in the crowd"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": {
+        "0": 83,
+        "1": 362
+      },
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "zhang.png",
+        "image"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "OmniGenNode",
+      "pos": {
+        "0": 557,
+        "1": 98
+      },
+      "size": {
+        "0": 315,
+        "1": 358
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt_text",
+          "type": "TEXT",
+          "link": 3
+        },
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "link": 5,
+          "shape": 7
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OmniGenNode"
+      },
+      "widgets_values": [
+        784,
+        512,
+        50,
+        2.5,
+        1.6,
+        512,
+        true,
+        false,
+        false,
+        1919,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "TEXT"
+    ],
+    [
+      4,
+      4,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      5,
+      5,
+      0,
+      4,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}

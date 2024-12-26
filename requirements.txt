@@ -1,0 +1,6 @@
+datasets
+accelerate
+pillow
+peft
+diffusers
+timm
