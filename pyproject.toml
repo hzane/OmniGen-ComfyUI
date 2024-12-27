@@ -1,0 +1,15 @@
+[project]
+name = "omnigen-comfyui"
+description = "A custom node for [a/OmniGen](https://github.com/VectorSpaceLab/OmniGen)."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["datasets", "accelerate", "pillow", "peft", "diffusers", "timm"]
+
+[project.urls]
+Repository = "https://github.com/hzane/OmniGen-ComfyUI"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "OmniGen-ComfyUI"
+Icon = ""
